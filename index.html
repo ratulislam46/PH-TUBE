@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH-TUBE</title>
+    <!-- daisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header>
+        <nav class="flex w-11/12 mx-auto justify-between my-5 pb-3 border-b ">
+            <div>
+                <img src="assets/Logo.png" alt="">
+            </div>
+            <div>
+                <button class="btn">Sort by view</button></div>
+            <div>
+                <button class="btn bg-red-500 text-white">Blog</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="btn-container" class="flex gap-5 justify-center mb-10">
+            <div><button class="btn btn-sm bg-red-500 text-white">All</button></div>
+        </div>
+
+        <section id="video-container" class="grid grid-cols-4 gap-5 w-11/12 mx-auto mb-5" >
+
+        </section>
+    </main>
+
+
+    <!-- script  -->
+     <script src="js/button.js"></script>
+     <script src="js/video-card.js"></script>
+</body>
+</html>
