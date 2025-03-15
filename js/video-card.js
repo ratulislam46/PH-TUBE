@@ -1,6 +1,6 @@
 
-function videosCatagories () {
-    fetch("https://openapi.programming-hero.com/api/phero-tube/videos")
+function videosCatagories (searchText="") {
+    fetch(`https://openapi.programming-hero.com/api/phero-tube/videos?title=${searchText}`)
         .then(res =>res.json())
         .then(data => {
           removeClassName()                               //----removeClassName function ti ai khan thyk run korano hoise -----------
@@ -62,9 +62,6 @@ const displayVideos = (videos) =>{
 // videosCatagories()        -------ai function k call kora hoise HTML file er button er onclik thyk---------
 
 
-
-
-
 const loadVideoDetails= (videoId) =>{
   // console.log(videoId)
   const url = `https://openapi.programming-hero.com/api/phero-tube/video/${videoId}`;
@@ -95,3 +92,4 @@ const displayVideoDetails = (video) => {
 
   `
 }
+

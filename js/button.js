@@ -18,4 +18,16 @@ function displayCatagories (categories) {
     }
 }
 
+
+
+
+document.getElementById('search-input').addEventListener('keyup', (e) => {
+    const input = e.target.value;
+    videosCatagories(input)
+});
+
+
+
 loadCatagories()
+
+
