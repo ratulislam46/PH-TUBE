@@ -2,14 +2,31 @@
 function videosCatagories () {
     fetch("https://openapi.programming-hero.com/api/phero-tube/videos")
         .then(res =>res.json())
-        .then(data => displayVideos(data.videos))
+        .then(data => {
+          removeClassName()                               //----removeClassName function ti ai khan thyk run korano hoise -----------
+          document.getElementById("btn-all").classList.add('active')
+          displayVideos(data.videos)
+        })
 }
 
 const displayVideos = (videos) =>{
     const videoContainer = document.getElementById('video-container');
+    videoContainer.innerHTML = ""
+
+            // ----- jodi videos er length zero hoy tokhon ai vabe kaj korbe--------
+    if(videos.length==0){
+
+      videoContainer.innerHTML= `
+      <div class="flex flex-col col-span-full justify-center items-center text-center py-20">
+                <img class="w-[120px] mb-5" src="assets/Icon.png" alt="">
+                <h2 class="font-bold text-2xl">Oops!! Sorry, There is no content here</h2>
+            </div>
+      `
+      return;
+    }
 
     videos.forEach((videos) =>{
-        console.log(videos)
+        // console.log(videos)
         const videoCards = document.createElement('div')
         videoCards.innerHTML= `
         
@@ -34,12 +51,11 @@ const displayVideos = (videos) =>{
                     </div>
                 </div>
               </div>
-        `
 
+        `
         videoContainer.append(videoCards)
-        
     })
 }
 
 
-videosCatagories()
+// videosCatagories()        -------ai function k call kora hoise HTML file er button er onclik thyk---------
